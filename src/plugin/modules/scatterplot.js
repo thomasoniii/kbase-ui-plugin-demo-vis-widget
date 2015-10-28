@@ -6,13 +6,13 @@
  white: true
  */
 define([
-    'kb.runtime',
     'bluebird',
-    'kb_widget_vis_scatterPlot'],
-    function (R, Promise) {
+    'jquery',
+    'kb_vis_scatterPlot'],
+    function (Promise, $) {
         'use strict';
         function widget(config) {
-            var mount, container;
+            var mount, container, runtime = config.runtime;
             function render() {
 
                 var dataset = [];
@@ -69,7 +69,7 @@ define([
                     mount.appendChild(container);
                     var rendered = render();
 
-                    R.send('app', 'title', rendered.title);
+                    runtime.send('ui', 'setTitle', rendered.title);
                     $(container).append(rendered.content);
 
                     resolve();

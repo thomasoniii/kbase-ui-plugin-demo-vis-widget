@@ -9,31 +9,48 @@ package:
 source:
     modules:
         -
-            module: kb_demo_vis_barChart
+            module: kb_visDemo_barChart
             file: barchart
         -
-            module: kb_demo_vis_heatMap
+            module: kb_visDemo_heatMap
             file: heatmap
         -
-            module: kb_demo_vis_lineChart
+            module: kb_visDemo_lineChart
             file: linechart
         -
-            module: kb_demo_vis_scatterPlot
+            module: kb_visDemo_scatterPlot
             file: scatterplot
 install:
+    widgets:
+        -
+            module: kb_visDemo_barChart
+            id: kb_visDemo_barChart
+            type: factory
+        -
+            module: kb_visDemo_heatMap
+            id: kb_visDemo_heatMap
+            type: factory
+        -
+            module: kb_visDemo_lineChart
+            id: kb_visDemo_lineChart
+            type: factory
+        -
+            module: kb_visDemo_scatterPlot
+            id: kb_visDemo_scatterPlot
+            type: factory
     routes:
         -
             path: ['visdemo', 'barchart']
-            panelFactory: kb_demo_vis_barChart
+            widget: kb_visDemo_barChart
         -
             path: ['visdemo', 'heatmap']
-            panelFactory: kb_demo_vis_heatMap
+            widget: kb_visDemo_heatMap
         -
             path: ['visdemo', 'linechart']
-            panelFactory: kb_demo_vis_lineChart
+            widget: kb_visDemo_lineChart
         -
             path: ['visdemo', 'scatterplot']
-            panelFactory: kb_demo_vis_scatterPlot
+            widget: kb_visDemo_scatterPlot
     menu:
         -
             name: visdemoBarchart

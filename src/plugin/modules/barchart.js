@@ -6,15 +6,15 @@
  white: true
  */
 define([
-    'kb.dom',
-    'kb.runtime',
     'bluebird',
+    'jquery',
     'underscore',
-    'kb_widget_vis_barChart'],
-    function (dom, R, Promise, _) {
+    'kb_common_dom',
+    'kb_vis_barChart'],
+    function (Promise, $, _, dom) {
         'use strict';
         function widget(config) {
-            var mount, container;
+            var mount, container, runtime = config.runtime;
             function render() {
                 var bars = [];
                 for (var i = 0; i < 20; i++) {
@@ -39,10 +39,10 @@ define([
                     content: $bar.$elem
                 };
             }
-            
+
             function init(config) {
                 return new Promise(function (resolve) {
-                   resolve(); 
+                    resolve();
                 });
             }
 
@@ -53,7 +53,7 @@ define([
                     mount.appendChild(container);
                     var rendered = render();
 
-                    R.send('app', 'title', rendered.title);
+                    runtime.send('ui', 'setTitle', rendered.title);
                     $(container).append(rendered.content);
 
                     resolve();

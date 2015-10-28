@@ -6,13 +6,13 @@
  white: true
  */
 define([
-    'kb.runtime',
     'bluebird',
-    'kb_widget_vis_lineChart'],
-    function (R, Promise) {
+    'jquery',
+    'kb_vis_lineChart'],
+    function (Promise, $) {
         'use strict';
         function widget(config) {
-            var mount, container;
+            var mount, container, runtime = config.runtime;
             function render() {
 
                 var sin = [];
@@ -121,7 +121,7 @@ define([
                     mount.appendChild(container);
                     var rendered = render();
 
-                    R.send('app', 'title', rendered.title);
+                    runtime.send('ui', 'setTitle', rendered.title);
                     $(container).append(rendered.content);
 
                     resolve();
