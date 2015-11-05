@@ -20,7 +20,7 @@ git clone https://github.com/kbase/kbase-ui.git
 
 Adding the plugin to the bower config file will ensure that it will be installed into the kbase-ui. Bower can install a package directly from a github repo, and in fact has a special short-hand format for doing so. Although in the future we will utilize the bower central catalog to take full advantage of semantic versioning and simplified configuration, for now we are installing directly from github.
 
-Within the kbase-ui repo, locate this file ```demo/kbase-ui/bower.json```. In the dependencies section, place this line:
+Within the kbase-ui repo, locate the bower configuration file ```bower.json```. In the dependencies section, place this line:
         
 > ```
 "kbase-ui-plugin-demo-vis-widget": "eapearson/kbase-ui-plugin-demo-vis-widget#master",
@@ -32,15 +32,17 @@ Notes:
         
 ## 3) Update the *grunt build script* to include the plugin in the build
 
-In the kbase-ui repo, locate this file ```demo/kbase-ui/Gruntfile.js```, locate the ```bowerFiles``` object, and insert the following item:
+In the kbase-ui repo, edit the grunt configuration file ```Gruntfile.js```, locate the ```bowerFiles``` object, and insert or append the following item:
 
 > ```
 {
     name: 'kbase-ui-plugin-demo-vis-widget',
     cwd: 'src/plugin',
     src: ['**/*']
-},
+}
 > ```
+
+This will ensure that the demo repo is copied during the build task.
 
 ## 4) Next we need to ensure that our build process will target the *test* ui configuration.
 
@@ -57,14 +59,16 @@ uiTarget = 'test';
 The ui config files are located in the top level config directory, and are named ```ui-test.yml``` and ```ui-prod.yml```. The *uiTarget* value is used to locate the required config file, thus *test* and *prod*.
 
 > ```
-kbase-ui/config/ui-test.yml
+config/ui-test.yml
 > ```
 
 The config files are in the YAML format. The file has two top-level properties -- *plugins* and *menu*. The *plugins* section specifies the plugins to load into the runtime, and the *menu* section defines the composition of the main (hamburger) menu.
 
 The plugin sections is currently composed of a list of lists. The first list level defines sets of plugins which are loaded in order. The second list level specifies the actual lists of plugins and are loaded in arbitrary order. The first level is ordered because presently there are dependencies between plugins, and the ordering ensures that core plugins are loaded first.Normally we just worry about putting items into the second group.
 
-In order for our plugin to load into the ui runtime, we need to provide an appropriate entry. These entries take two forms. The simple form is a string which specifies a directory within ```kbase-ui/src/plugins```. These are internal plugins. We want to create in the second form:
+In order for our plugin to load into the ui runtime, we need to provide an appropriate entry. These entries take two forms. The simple form is a string which specifies a directory within ```kbase-ui/src/plugins```. These are internal plugins. We want to create an entry the second form.
+
+Insert or append this item into the second group of plugins:
 
 > ```
         -
@@ -73,6 +77,8 @@ In order for our plugin to load into the ui runtime, we need to provide an appro
 > ```
 
 This one instructs the ui to look for the plugin in the specified path relative to the build directory.
+
+Note: Thisi being yaml, be sure that the indentation is correct.
 
 ## 6) Update the test ui config to use the *demo menu items*.
 
@@ -90,7 +96,7 @@ This is how the default menu will look after adding the four demo menu items.
         menus:
             authenticated: 
                 main: [narrative, search, dashboard]
-                developer: [visdemoBarchart, visdemoHeatmap, visdemoLinechart, visdemoScatterplot]
+                developer: [databrowser, typebrowser, visdemoBarchart, visdemoHeatmap, visdemoLinechart, visdemoScatterplot]
                 help: [about-kbase, contact-kbase]
             unauthenticated: 
                 main: [search]
