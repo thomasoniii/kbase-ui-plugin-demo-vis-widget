@@ -38,6 +38,9 @@ source:
         -
             module: kb_visDemo_network
             file: network
+        -
+            module: kb_visDemo_sparkline
+            file: sparkline
 install:
     widgets:
         -
@@ -80,6 +83,10 @@ install:
             module: kb_visDemo_network
             id: kb_visDemo_network
             type: factory
+        -
+            module: kb_visDemo_sparkline
+            id: kb_visDemo_sparkline
+            type: factory
     routes:
         -
             path: ['visdemo', 'barchart']
@@ -111,6 +118,9 @@ install:
         -
             path: ['visdemo', 'network']
             widget: kb_visDemo_network
+        -
+            path: ['visdemo', 'sparkline']
+            widget: kb_visDemo_sparkline
     menu:
         -
             name: visdemoBarchart
@@ -171,4 +181,10 @@ install:
             definition:
                 path: visdemo/network
                 label: Vis Demo - Forced Network
+                icon: link
+        -
+            name: visdemoSparkline
+            definition:
+                path: visdemo/sparkline
+                label: Vis Demo - Sparkline
                 icon: link
