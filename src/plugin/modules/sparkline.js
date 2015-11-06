@@ -36,18 +36,17 @@ define([
                 }
 
                 var $spark1 = $.jqElem('div').kbaseSparkline( { dataset : spark1 } );
-                var $spark2 = $.jqElem('div').css('display' , 'inline-block').kbaseSparkline( { dataset : spark2 } );
-                var $spark3 = $.jqElem('div').css('display' , 'inline-block').kbaseSparkline( { dataset : spark3 } );
 
                 var $demo = $.jqElem('div')
+                    .css('width', '500px')
                     .html('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lorem risus, dictum nec nisi at, fringilla iaculis nunc.\
-                    Aliquam erat volutpat. Curabitur porttitor euismod semper. <div id = "spark1" style = "display:inline-block"></div>Integer et \
+                    Aliquam erat volutpat. Curabitur porttitor euismod semper. <div id = "spark1" style = "display:inline-block; width : 100px; height : 25px; margin-left : 5px; margin-right : 5px"></div>Integer et \
                     ultricies nulla. Sed tincidunt nibh ligula, quis volutpat \
                     est consequat faucibus. Ut at condimentum risus, ac porttitor tortor. In magna sem, fringilla at viverra sed, elementum nec ex. \
-                    Duis ornare libero eu augue commodo, sed semper orci molestie. <div id = "spark2" style = "display:inline-block"></div>Fusce \
+                    Duis ornare libero eu augue commodo, sed semper orci molestie. <div id = "spark2" style = "display:inline-block; width : 100px; height : 25px; margin-left : 5px; margin-right : 5px"></div>Fusce \
                     hendrerit ac dolor non iaculis. Aenean eu imperdiet turpis. \
                     Maecenas urna odio, convallis semper pulvinar non, sollicitudin ac lorem. Maecenas vel iaculis urna. Proin sit amet ante sit amet \
-                    felis bibendum ornare.<div id = "spark3" style = "display:inline-block"></div>');
+                    felis bibendum ornare.<div id = "spark3" style = "display:inline-block; width : 100px; height : 25px; margin-left : 5px; margin-right : 5px"></div>');
 
                 $spark1._rewireIds($demo, $spark1);
 
@@ -57,7 +56,7 @@ define([
 
                 return {
                     title: 'Sample sparklines',
-                    content: $venn.$elem
+                    content: $demo
                 };
             }
 
