@@ -19,6 +19,9 @@ define([
 
                 var generate_hm_data = function generate_hm_data() {
 
+                    numPies     = Math.floor(Math.random() * 30)
+                    numSlices   = Math.floor(Math.random() * 100);
+
                     var newDataset = [];
                     for (var i = 0; i < numPies; i++) {
                         newDataset[i] = [];
