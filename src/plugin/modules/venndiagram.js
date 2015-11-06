@@ -22,6 +22,7 @@ define([
                     .kbaseVenndiagram(
                     {
 
+                        labels : true,
                         xLabel      : 'Some useful experiment',
                         sortSubgroups:undefined,
 
