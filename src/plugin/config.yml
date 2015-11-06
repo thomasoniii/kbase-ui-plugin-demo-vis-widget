@@ -20,6 +20,9 @@ source:
         -
             module: kb_visDemo_scatterPlot
             file: scatterplot
+        -
+            module: kb_visDemo_pieChart
+            file: piechart
 install:
     widgets:
         -
@@ -38,6 +41,10 @@ install:
             module: kb_visDemo_scatterPlot
             id: kb_visDemo_scatterPlot
             type: factory
+        -
+            module: kb_visDemo_pieChart
+            id: kb_visDemo_pieChart
+            type: factory
     routes:
         -
             path: ['visdemo', 'barchart']
@@ -51,6 +58,9 @@ install:
         -
             path: ['visdemo', 'scatterplot']
             widget: kb_visDemo_scatterPlot
+        -
+            path: ['visdemo', 'piechart']
+            widget: kb_visDemo_pieChart
     menu:
         -
             name: visdemoBarchart
@@ -75,5 +85,10 @@ install:
             definition:
                 path: visdemo/scatterplot
                 label: Vis Demo - scatterplot
-                icon: paw                
-                
+                icon: paw
+        -
+            name: visdemoPiechart
+            definition:
+                path: visdemo/piechart
+                label: Vis Demo - piechart
+                icon: paw
