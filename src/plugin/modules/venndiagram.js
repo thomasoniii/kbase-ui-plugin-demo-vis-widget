@@ -20,9 +20,6 @@ define([
                 var $venn = $('#venn').kbaseVenndiagram(
                     {
 
-                        startingPosition : pos,
-                        //choppedGroups : true,
-
                         xLabel      : 'Some useful experiment',
                         sortSubgroups:undefined,
 
