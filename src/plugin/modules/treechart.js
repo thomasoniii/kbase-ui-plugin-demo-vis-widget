@@ -41,7 +41,7 @@ define([
 
                 var $tree = $.jqElem('div')
                     .css({width: '800px', height: '500px'})
-                    .kbasePiechart({
+                    .kbaseTrechart({
                         lineStyle : 'square',
                         layout : 'cluster',
                         distance : 50,
