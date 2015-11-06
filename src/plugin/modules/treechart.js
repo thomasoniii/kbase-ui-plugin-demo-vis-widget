@@ -22,19 +22,24 @@ define([
                     if (dataset == undefined) {
                         dataset = { name : 'Root', children : [] }
                     }
+                    if (depth == undefined) {
+                        depth = 5;
+                    }
 
                     var labels = ['Alpha', 'Bravo', 'Charlie', 'Delta', 'Echo', 'Foxtrot', 'Golf', 'Hotel'];
 
                     for (var i = 0; i < labels.length; i++) {
                         if (Math.round(Math.random())) {
+
                             var child = {
                                 name : labels[i] + '-' + depth,
                                 children : []
                             };
 
                             if (depth > 0 && Math.round(Math.random())) {
-                                generate_tree_data(child.children, depth - 1)
+                                generate_tree_data(child, depth - 1)
                             }
+                            dataset.children.push(child);
                         }
                     }
 
