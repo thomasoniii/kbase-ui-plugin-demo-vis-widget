@@ -10,57 +10,59 @@ define([
     'jquery',
     'underscore',
     'kb_common_dom',
-    'kb_vis_piechart'],
+    'kb_vis_treechart'],
     function (Promise, $, _, dom) {
         'use strict';
         function widget(config) {
             var mount, container, runtime = config.runtime;
             function render() {
 
-                var generate_pie_data = function generate_pie_data() {
-                    var numSlices = Math.floor(Math.random() * 20);
+                var generate_tree_data = function generate_tree_data(dataset, depth) {
 
-                    var newDataset = [];
-                    for (var i = 0; i < numSlices; i++) {
-                        newDataset.push(
-                            {
-                                value : Math.random(),
-                                //color : 'red',
-                                label : 'Label ' + (i + 1),
+                    var labels = ['Alpha', 'Bravo', 'Charlie', 'Delta', 'Echo', 'Foxtrot', 'Golf', 'Hotel'];
+
+                    for (var i = 0; i < labels.length; i++) {
+                        if (Math.round(Math.random())) {
+                            var child = {
+                                name : labels[i] + '-' + depth,
+                                children : []
+                            };
+
+                            if (depth > 0 && Math.round(Math.random())) {
+                                generate_tree_data(child.children, depth - 1)
                             }
-                        );
-                    };
+                        }
+                    }
 
-                    return newDataset;
+                    return dataset;
                 }
 
-                var pie_data = generate_pie_data();
+                var tree_data = generate_tree_data();
 
-                var $pie = $.jqElem('div')
+                var $tree = $.jqElem('div')
                     .css({width: '800px', height: '500px'})
                     .kbasePiechart({
-                        scaleAxes: true,
-                        useUniqueID : false,
-                        graident: true,
-                        startingPosition : 'top',
-                        innerRadius : -100,
-                        outsideLabels : true,
-                        dataset: pie_data
+                        lineStyle : 'square',
+                        layout : 'cluster',
+                        distance : 50,
+                        bias : 'leaf',
+                        fixed : true,
+                        dataset: tree_data
                     });
 
                 var $demo = $.jqElem('div')
-                    .append($pie.$elem)
+                    .append($tree.$elem)
                     .append(
                         $.jqElem('button')
                             .on('click', function(e) {
-                                $pie.setDataset(generate_pie_data());
+                                $tree.setDataset(generate_tree_data());
                             })
-                            .append('Randomize pie chart')
+                            .append('Randomize tree chart')
                     )
                 ;
 
                 return {
-                    title: 'Sample pie chart',
+                    title: 'Sample tree chart',
                     content: $demo
                 };
             }

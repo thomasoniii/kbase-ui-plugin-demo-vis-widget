@@ -23,6 +23,9 @@ source:
         -
             module: kb_visDemo_pieChart
             file: piechart
+        -
+            module: kb_visDemo_treeChart
+            file: treechart
 install:
     widgets:
         -
@@ -45,6 +48,10 @@ install:
             module: kb_visDemo_pieChart
             id: kb_visDemo_pieChart
             type: factory
+        -
+            module: kb_visDemo_treeChart
+            id: kb_visDemo_treeChart
+            type: factory
     routes:
         -
             path: ['visdemo', 'barchart']
@@ -61,6 +68,9 @@ install:
         -
             path: ['visdemo', 'piechart']
             widget: kb_visDemo_pieChart
+        -
+            path: ['visdemo', 'treechart']
+            widget: kb_visDemo_treeChart
     menu:
         -
             name: visdemoBarchart
@@ -72,23 +82,29 @@ install:
             name: visdemoHeatmap
             definition:
                 path: visdemo/heatmap
-                label: Vis Demo - heatmap
+                label: Vis Demo - Heat map
                 icon: paw
         -
             name: visdemoLinechart
             definition:
                 path: visdemo/linechart
-                label: Vis Demo - linechart
+                label: Vis Demo - Line Chart
                 icon: paw
         -
             name: visdemoScatterplot
             definition:
                 path: visdemo/scatterplot
-                label: Vis Demo - scatterplot
+                label: Vis Demo - Scatter Plot
                 icon: paw
         -
             name: visdemoPiechart
             definition:
                 path: visdemo/piechart
-                label: Vis Demo - piechart
+                label: Vis Demo - Pie Chart
+                icon: paw
+        -
+            name: visdemoTreechart
+            definition:
+                path: visdemo/treechart
+                label: Vis Demo - Tree Chart
                 icon: paw
