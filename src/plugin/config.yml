@@ -187,4 +187,4 @@ install:
             definition:
                 path: visdemo/sparkline
                 label: Vis Demo - Sparkline
-                icon: link
+                icon: line-chart
