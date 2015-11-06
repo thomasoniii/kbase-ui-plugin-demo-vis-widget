@@ -26,6 +26,9 @@ source:
         -
             module: kb_visDemo_treeChart
             file: treechart
+        -
+            module: kb_visDemo_circular_heatmap
+            file: circularheatmap
 install:
     widgets:
         -
@@ -52,6 +55,10 @@ install:
             module: kb_visDemo_treeChart
             id: kb_visDemo_treeChart
             type: factory
+        -
+            module: kb_visDemo_circular_heatmap
+            id: kb_visDemo_circular_heatmap
+            type: factory
     routes:
         -
             path: ['visdemo', 'barchart']
@@ -71,6 +78,9 @@ install:
         -
             path: ['visdemo', 'treechart']
             widget: kb_visDemo_treeChart
+        -
+            path: ['visdemo', 'circularheatmap']
+            widget: kb_visDemo_circular_heatmap
     menu:
         -
             name: visdemoBarchart
@@ -107,4 +117,10 @@ install:
             definition:
                 path: visdemo/treechart
                 label: Vis Demo - Tree Chart
+                icon: paw
+        -
+            name: visdemoCircularheatmap
+            definition:
+                path: visdemo/circularheatmap
+                label: Vis Demo - Circular Heat Map
                 icon: paw
