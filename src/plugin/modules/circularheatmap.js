@@ -19,8 +19,8 @@ define([
 
                 var generate_hm_data = function generate_hm_data() {
 
-                    numPies     = Math.floor(Math.random() * 30)
-                    numSlices   = Math.floor(Math.random() * 100);
+                    var numPies     = Math.floor(Math.random() * 30)
+                    var numSlices   = Math.floor(Math.random() * 100);
 
                     var newDataset = [];
                     for (var i = 0; i < numPies; i++) {
@@ -55,16 +55,17 @@ define([
                         childOptions : {
                             labels : false,
                             startingPosition : 'top'
-                        },
-                        dataset: hm_data
+                        }
                     });
+
+                $hm.setDatasets(hm_data);
 
                 var $demo = $.jqElem('div')
                     .append($hm.$elem)
                     .append(
                         $.jqElem('button')
                             .on('click', function(e) {
-                                $hm.setDataset(generate_hm_data());
+                                $hm.setDatasets(generate_hm_data());
                             })
                             .append('Randomize heatmap')
                     )
