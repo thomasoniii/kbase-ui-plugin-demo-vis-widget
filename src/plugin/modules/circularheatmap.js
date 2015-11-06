@@ -52,9 +52,11 @@ define([
                         labels : false,
                         innerRadius : 50,
                         startingPosition : 'top',
+                        outerRadiusInset : 0,
                         childOptions : {
                             labels : false,
-                            startingPosition : 'top'
+                            startingPosition : 'top',
+                            outerRadiusInset : 0,
                         }
                     });
 
