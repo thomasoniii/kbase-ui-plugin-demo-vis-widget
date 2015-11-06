@@ -8,7 +8,7 @@
 define([
     'bluebird',
     'jquery',
-    'kb_vis_heatMap'],
+    'kb_vis_heatmap'],
     function (Promise, $) {
         'use strict';
         function widget(config) {

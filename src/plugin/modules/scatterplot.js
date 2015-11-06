@@ -8,7 +8,7 @@
 define([
     'bluebird',
     'jquery',
-    'kb_vis_scatterPlot'],
+    'kb_vis_scatterplot'],
     function (Promise, $) {
         'use strict';
         function widget(config) {

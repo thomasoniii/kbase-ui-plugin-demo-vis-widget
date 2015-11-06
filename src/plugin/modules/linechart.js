@@ -8,7 +8,7 @@
 define([
     'bluebird',
     'jquery',
-    'kb_vis_lineChart'],
+    'kb_vis_linechart'],
     function (Promise, $) {
         'use strict';
         function widget(config) {

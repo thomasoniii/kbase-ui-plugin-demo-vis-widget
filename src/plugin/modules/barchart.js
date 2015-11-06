@@ -10,7 +10,7 @@ define([
     'jquery',
     'underscore',
     'kb_common_dom',
-    'kb_vis_barChart'],
+    'kb_vis_barchart'],
     function (Promise, $, _, dom) {
         'use strict';
         function widget(config) {
