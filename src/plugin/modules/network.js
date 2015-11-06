@@ -22,14 +22,28 @@ define([
 
                     var numNodes = Math.floor(Math.random() * 200);
 
+                    var xCoord = 50;
+                    var yCoord = 50;
+
+                    var colors = ['red', 'green', 'blue', 'purple', 'orange'];
+
                     for (var i = 0; i < numNodes; i++) {
                         newDataset.nodes.push(
-                            {name : 'Node ' + i, radius : Math.floor(Math.random() * 20), color : 'blue'}
+                            {name : 'Node ' + i, radius : Math.floor(Math.random() * 20), color : colors[Math.floor(Math.random() * colors.length)],
+                                }
                         );
 
                         newDataset.edges.push(
-                            { source : Math.floor(Math.random() * numNodes), target : Math.floor(Math.random() * numNodes) }
+                            { source : Math.floor(Math.random() * numNodes), target : Math.floor(Math.random() * numNodes),
+                            curveStrength : Math.random() < 0.3 ? Math.floor(Math.random() * 50 - 100) : undefined }
                         );
+
+                        xCoord += 50;
+                        if (xCoord > 800) {
+                            xCoord = 0;
+                            yCoord += 50;
+                        };
+
                     }
 
 
@@ -42,7 +56,9 @@ define([
                     .css({width: '800px', height: '800px'})
                     .kbaseForcedNetwork({
                         scaleAxes : true,
-                        dataset: network_data
+                        dataset: network_data,
+                        charge : -100,
+                        linkDistance : 200,
                     });
 
                 var $demo = $.jqElem('div')
