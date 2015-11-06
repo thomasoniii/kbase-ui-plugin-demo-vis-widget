@@ -17,7 +17,9 @@ define([
             var mount, container, runtime = config.runtime;
             function render() {
 
-                var $venn = $.jqElem('div').kbaseVenndiagram(
+                var $venn = $.jqElem('div')
+                    .css({width: '800px', height: '800px'})
+                    .kbaseVenndiagram(
                     {
 
                         xLabel      : 'Some useful experiment',
