@@ -19,6 +19,10 @@ define([
 
                 var generate_tree_data = function generate_tree_data(dataset, depth) {
 
+                    if (dataset == undefined) {
+                        dataset = { name : 'Root', children : [] }
+                    }
+
                     var labels = ['Alpha', 'Bravo', 'Charlie', 'Delta', 'Echo', 'Foxtrot', 'Golf', 'Hotel'];
 
                     for (var i = 0; i < labels.length; i++) {
