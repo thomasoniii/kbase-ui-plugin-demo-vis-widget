@@ -20,11 +20,11 @@ define([
                 var generate_network_data = function generate_network_data() {
                     var newDataset = { nodes : [], edges : []};
 
-                    var numNodes = Math.floor(Math.random() * 100);
+                    var numNodes = Math.floor(Math.random() * 200);
 
                     for (var i = 0; i < numNodes; i++) {
                         newDataset.nodes.push(
-                            {name : 'Node ' + i, radius : Math.floor(Math.random() * 100), color : 'blue'}
+                            {name : 'Node ' + i, radius : Math.floor(Math.random() * 20), color : 'blue'}
                         );
 
                         newDataset.edges.push(
