@@ -34,7 +34,7 @@ define([
 
                 var $chord = $.jqElem('div')
                     .css({width: '800px', height: '800px'})
-                    .kbasePiechart({
+                    .kbaseChordchart({
                         startingPosition : 'top',
                         labels : true,
                         dataset: chord_data
