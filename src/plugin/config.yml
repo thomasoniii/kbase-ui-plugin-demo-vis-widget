@@ -32,6 +32,9 @@ source:
         -
             module: kb_visDemo_venndiagram
             file: venndiagram
+        -
+            module: kb_visDemo_chordchart
+            file: chordchart
 install:
     widgets:
         -
@@ -66,6 +69,10 @@ install:
             module: kb_visDemo_venndiagram
             id: kb_visDemo_venndiagram
             type: factory
+        -
+            module: kb_visDemo_chordchart
+            id: kb_visDemo_chordchart
+            type: factory
     routes:
         -
             path: ['visdemo', 'barchart']
@@ -91,6 +98,9 @@ install:
         -
             path: ['visdemo', 'venndiagram']
             widget: kb_visDemo_venndiagram
+        -
+            path: ['visdemo', 'chordchart']
+            widget: kb_visDemo_chordchart
     menu:
         -
             name: visdemoBarchart
@@ -139,4 +149,10 @@ install:
             definition:
                 path: visdemo/venndiagram
                 label: Vis Demo - Venn Diagram
+                icon: paw
+        -
+            name: visdemoChordchart
+            definition:
+                path: visdemo/chordchart
+                label: Vis Demo - Chord chart
                 icon: paw
