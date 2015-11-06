@@ -42,7 +42,7 @@ define([
                         scaleAxes: true,
                         useUniqueID : false,
                         graident: true,
-                        startingPosition : 'top'
+                        startingPosition : 'top',
                         innerRadius : -100,
                         outsideLabels : true,
                         dataset: pie_data
