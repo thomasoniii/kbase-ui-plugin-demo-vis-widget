@@ -35,6 +35,9 @@ source:
         -
             module: kb_visDemo_chordchart
             file: chordchart
+        -
+            module: kb_visDemo_network
+            file: network
 install:
     widgets:
         -
@@ -73,6 +76,10 @@ install:
             module: kb_visDemo_chordchart
             id: kb_visDemo_chordchart
             type: factory
+        -
+            module: kb_visDemo_network
+            id: kb_visDemo_network
+            type: factory
     routes:
         -
             path: ['visdemo', 'barchart']
@@ -101,58 +108,67 @@ install:
         -
             path: ['visdemo', 'chordchart']
             widget: kb_visDemo_chordchart
+        -
+            path: ['visdemo', 'network']
+            widget: kb_visDemo_network
     menu:
         -
             name: visdemoBarchart
             definition:
                 path: visdemo/barchart
                 label: Vis Demo - Bar Chart
-                icon: paw
+                icon: bar-chart
         -
             name: visdemoHeatmap
             definition:
                 path: visdemo/heatmap
                 label: Vis Demo - Heat map
-                icon: paw
+                icon: barcode
         -
             name: visdemoLinechart
             definition:
                 path: visdemo/linechart
                 label: Vis Demo - Line Chart
-                icon: paw
+                icon: line-chart
         -
             name: visdemoScatterplot
             definition:
                 path: visdemo/scatterplot
                 label: Vis Demo - Scatter Plot
-                icon: paw
+                icon: elipsis-v
         -
             name: visdemoPiechart
             definition:
                 path: visdemo/piechart
                 label: Vis Demo - Pie Chart
-                icon: paw
+                icon: pie-chart
         -
             name: visdemoTreechart
             definition:
                 path: visdemo/treechart
                 label: Vis Demo - Tree Chart
-                icon: paw
+                icon: tree
         -
             name: visdemoCircularheatmap
             definition:
                 path: visdemo/circularheatmap
                 label: Vis Demo - Circular Heat Map
-                icon: paw
+                icon: dot-circle-o
         -
             name: visdemoVenndiagram
             definition:
                 path: visdemo/venndiagram
                 label: Vis Demo - Venn Diagram
-                icon: paw
+                icon: circle-o
         -
             name: visdemoChordchart
             definition:
                 path: visdemo/chordchart
                 label: Vis Demo - Chord chart
-                icon: paw
+                icon: circle-o-notch
+        -
+            name: visdemoNetwork
+            definition:
+                path: visdemo/network
+                label: Vis Demo - Forced Network
+                icon: link
