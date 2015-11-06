@@ -17,7 +17,7 @@ define([
             var mount, container, runtime = config.runtime;
             function render() {
 
-                var generate_pie_data = function generate_pie_data {
+                var generate_pie_data = function generate_pie_data() {
                     var numSlices = Math.floor(Math.random() * 20);
 
                     var newDataset = [];
