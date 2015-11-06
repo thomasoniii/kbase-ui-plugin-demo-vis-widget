@@ -29,6 +29,9 @@ source:
         -
             module: kb_visDemo_circular_heatmap
             file: circularheatmap
+        -
+            module: kb_visDemo_venndiagram
+            file: venndiagram
 install:
     widgets:
         -
@@ -59,6 +62,10 @@ install:
             module: kb_visDemo_circular_heatmap
             id: kb_visDemo_circular_heatmap
             type: factory
+        -
+            module: kb_visDemo_venndiagram
+            id: kb_visDemo_venndiagram
+            type: factory
     routes:
         -
             path: ['visdemo', 'barchart']
@@ -81,6 +88,9 @@ install:
         -
             path: ['visdemo', 'circularheatmap']
             widget: kb_visDemo_circular_heatmap
+        -
+            path: ['visdemo', 'venndiagram']
+            widget: kb_visDemo_venndiagram
     menu:
         -
             name: visdemoBarchart
@@ -123,4 +133,10 @@ install:
             definition:
                 path: visdemo/circularheatmap
                 label: Vis Demo - Circular Heat Map
+                icon: paw
+        -
+            name: visdemoVenndiagram
+            definition:
+                path: visdemo/venndiagram
+                label: Vis Demo - Venn Diagram
                 icon: paw
